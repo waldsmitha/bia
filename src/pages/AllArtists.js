@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 
 import Section from "../components/Section";
 
-function Artists() {
+function AllArtists() {
   return (
     <StyledArtists>
-      <h1>Artists</h1>
+      <h1>All Artists</h1>
       <Section />
       <Section />
       <Section />
@@ -19,4 +19,4 @@ const StyledArtists = styled(motion.div)`
   }
 `;
 
-export default Artists;
+export default AllArtists;

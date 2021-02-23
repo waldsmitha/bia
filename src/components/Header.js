@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Nav from "./Nav";
 
 import { Link } from "react-router-dom";
@@ -9,10 +11,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function Header() {
+  const [navToggle, setNavToggle] = useState(0);
+
+  const navOpen = () => {
+    setNavToggle(true);
+    console.log("Showing");
+  };
+
   return (
     <StyledHeader>
-      <FontAwesomeIcon icon={faBars} size="3x" />
-      <Link to="/">
+      <Nav navToggle={navToggle} setNavToggle={setNavToggle} />
+      <FontAwesomeIcon onClick={navOpen} icon={faBars} size="3x" />
+      <Link to="/" style={{ color: "#ffa1a1", textDecoration: "none" }}>
         <h1>bia</h1>
       </Link>
       <FontAwesomeIcon icon={faSearch} size="3x" />
