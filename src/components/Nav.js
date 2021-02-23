@@ -1,7 +1,7 @@
 function Nav() {
   return (
     <div>
-      <h1>Bia</h1>
+      <h1>Nav</h1>
     </div>
   );
 }
