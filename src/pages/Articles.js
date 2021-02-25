@@ -2,7 +2,8 @@
 
 import Section from "../components/Section";
 
-function Articles() {
+function Articles({ articles }) {
+  console.log(articles);
   return (
     <div>
       <h1>Articles</h1>

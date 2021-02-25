@@ -15,5 +15,8 @@ const StyledFooter = styled.div`
   min-height: 10vh;
   background: rgba(123, 205, 223, 0.55);
   color: #ffa1a1;
+  h1 {
+    font-size: 2rem;
+  }
 `;
 export default Footer;

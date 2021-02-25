@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
@@ -5,6 +7,8 @@ import styled from "styled-components";
 import Landing from "../components/Landing";
 import Section from "../components/Section";
 import Faq from "../components/Faq";
+
+import contentData from "../data";
 
 function Home() {
   const info = {
@@ -17,17 +21,17 @@ function Home() {
   return (
     <div>
       <Landing />
-      <Link to="/artists" style={{ color: "black", textDecoration: "none" }}>
-        <Section info={info.artists} />
-      </Link>
       <Link
-        to="/all/artists"
+        to="/artists/week"
         style={{ color: "black", textDecoration: "none" }}
       >
+        <Section info={info.artists} />
+      </Link>
+      <Link to="/artists" style={{ color: "black", textDecoration: "none" }}>
         <Section info={info.allArtists} />
       </Link>
       <Link to="/articles" style={{ color: "black", textDecoration: "none" }}>
-        <Section info={info.allArticles} />
+        <Section info={info.allArticles} a />
       </Link>
       <Faq />
     </div>
