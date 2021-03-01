@@ -1,16 +1,13 @@
-import { useState } from "react";
-
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import Landing from "../components/Landing";
 import Section from "../components/Section";
 import Faq from "../components/Faq";
 
-import contentData from "../data";
-
-function Home() {
+function Home({ artists, articles }) {
   const info = {
     artists: "Artists of the Week",
     articles: "Article of the Week",
@@ -18,24 +15,41 @@ function Home() {
     allArticles: "All Articles",
   };
 
+  let randomArtist = artists[Math.floor(Math.random() * artists.length)];
+  let randomArticle = articles[Math.floor(Math.random() * articles.length)];
+  let randomArtistImage = randomArtist.profileImage;
+  let randomArticleImages = randomArticle.images;
+  let randomArticleImage =
+    randomArticleImages[Math.floor(Math.random() * randomArticleImages.length)];
+
   return (
-    <div>
+    <StyledHome>
       <Landing />
       <Link
         to="/artists/week"
         style={{ color: "black", textDecoration: "none" }}
       >
-        <Section info={info.artists} />
+        <Section
+          info={info.artists}
+          artists={artists}
+          image={randomArtistImage}
+        />
       </Link>
       <Link to="/artists" style={{ color: "black", textDecoration: "none" }}>
-        <Section info={info.allArtists} />
+        <Section info={info.allArtists} image={randomArtistImage} />
       </Link>
       <Link to="/articles" style={{ color: "black", textDecoration: "none" }}>
-        <Section info={info.allArticles} a />
+        <Section
+          info={info.allArticles}
+          articles={articles}
+          image={randomArticleImage}
+        />
       </Link>
       <Faq />
-    </div>
+    </StyledHome>
   );
 }
+
+const StyledHome = styled(motion.div)``;
 
 export default Home;

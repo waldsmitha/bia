@@ -2,20 +2,25 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
-import Section from "../components/Section";
+import { pageAnim } from "../animations";
 
 function AllArtists({ artists }) {
-  console.log(artists);
-
   return (
-    <StyledArtists>
+    <StyledArtists
+      variants={pageAnim}
+      initial="hide"
+      animate="show"
+      exit="exit"
+    >
       <h1>All Artists</h1>
       {artists.map((artist) => (
         <div>
-          <Link to={`artists/${artist.name}`}>
+          <Link
+            to={`artists/${artist.id}`}
+            style={{ color: "black", textDecoration: "none" }}
+          >
             <h1>{artist.name}</h1>
-            <img src={artist.profileImage} alt="profile image" />
+            <img src={artist.profileImage} alt="profile" />
           </Link>
         </div>
       ))}

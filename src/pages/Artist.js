@@ -7,10 +7,11 @@ function Artist({ artists }) {
   // console.log(artists[0]);
   const history = useHistory();
   const urlArtist = history.location.pathname.split("/")[2];
-  console.log(urlArtist);
+  console.log(`url Artist: ${urlArtist}`);
   // const selectedArtist = artists.map((artist) => artist.name);
-  const selectedArtist = artists.filter((artist) => artist.name == urlArtist);
-  console.log(selectedArtist[0]);
+  const selectedArtist = artists.filter((artist) => artist.id === urlArtist);
+  console.log(`selectedArtist: ${selectedArtist}`);
+  console.log(artists[0].id);
 
   return (
     <StyledArtist>

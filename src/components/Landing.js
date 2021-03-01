@@ -7,11 +7,8 @@ function Landing() {
   return (
     <StyledLanding>
       <img src={test1} alt="" />
-      <h1>Article Etc. Read Me</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
-        vel!
-      </p>
+      <h1>Home Main Article</h1>
+      <p>Short Description Wow Lookie Here.</p>
     </StyledLanding>
   );
 }
@@ -19,6 +16,7 @@ function Landing() {
 const StyledLanding = styled(motion.div)`
   img {
     padding-bottom: 2rem;
+    width: 100%;
   }
 
   h1,

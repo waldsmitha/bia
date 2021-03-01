@@ -1,17 +1,11 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import test1 from "../img/test1.png";
-
-function Section({ info }) {
+function Section({ info, image }) {
   return (
     <StyledSection>
       <h1>{info}</h1>
-      <img src={test1} alt="" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
-        vel!
-      </p>
+      <img src={image} alt="" />
     </StyledSection>
   );
 }
@@ -24,6 +18,11 @@ const StyledSection = styled(motion.div)`
   }
   p {
     font-size: 1.5rem;
+  }
+  img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
   }
 `;
 

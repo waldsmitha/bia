@@ -22,6 +22,15 @@ body{
 h1 {
     font-size: 4rem;
 }
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+}
+p {
+    font-size: 1.8rem;
+}
 `;
 
 export default GlobalStyle;
