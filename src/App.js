@@ -30,12 +30,12 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <Header />
-      <AnimatePresence>
-        <Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
           <Route exact path={"/"}>
             <Home artists={artists} articles={articles} />
           </Route>
-          <Route exact path={"/artists/week"}>
+          <Route exact path={"/artistsofweek"}>
             <ArtistsWeek artists={artists} />
           </Route>
           <Route exact path={"/artists/:id"}>

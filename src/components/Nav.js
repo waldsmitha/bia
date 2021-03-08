@@ -43,14 +43,14 @@ function Nav({ navToggle, setNavToggle }) {
           <h3>Top Artists</h3>
         </Link>
         <Link
-          to="artists/week"
+          to="/artistsofweek"
           style={{ color: "black", textDecoration: "none" }}
           onClick={navClose}
         >
           <h3>Artists of the Week</h3>
         </Link>
         <Link
-          to="artists"
+          to="/artists"
           style={{ color: "black", textDecoration: "none" }}
           onClick={navClose}
         >
@@ -64,7 +64,7 @@ function Nav({ navToggle, setNavToggle }) {
           <h3>Article of the Week</h3>
         </Link>
         <Link
-          to="articles"
+          to="/articles"
           style={{ color: "black", textDecoration: "none" }}
           onClick={navClose}
         >

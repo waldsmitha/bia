@@ -1,12 +1,18 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { pageAnim } from "../animations";
 
 import { Link } from "react-router-dom";
 
 function Articles({ articles }) {
   console.log(articles);
   return (
-    <StyledArticles>
+    <StyledArticles
+      variants={pageAnim}
+      initial="hide"
+      animate="show"
+      exit="exit"
+    >
       <h1>All Articles</h1>
       {articles.map((article) => (
         <Link

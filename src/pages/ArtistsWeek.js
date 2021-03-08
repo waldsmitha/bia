@@ -2,10 +2,16 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { pageAnim } from "../animations";
 
 function ArtistsWeek({ info, artists }) {
   return (
-    <StyledArtists>
+    <StyledArtists
+      variants={pageAnim}
+      initial="hide"
+      animate="show"
+      exit="exit"
+    >
       <h1>Artists of the Week</h1>
       {artists.map((artist) => (
         <Link

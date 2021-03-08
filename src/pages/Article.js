@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { pageAnim } from "../animations";
 
 import { useHistory } from "react-router-dom";
 
@@ -15,7 +16,12 @@ function Article({ articles }) {
   console.log(urlArticle);
 
   return (
-    <StyledArticle>
+    <StyledArticle
+      variants={pageAnim}
+      initial="hide"
+      animate="show"
+      exit="exit"
+    >
       <h1>{selectedArticle[0].title}</h1>
       <h2>by {selectedArticle[0].author}</h2>
       <img src={selectedArticle[0].images[1]} alt="" />

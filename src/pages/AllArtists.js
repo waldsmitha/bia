@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { pageAnim } from "../animations";
 
+import ScrollTop from "../components/ScrollTop";
+
 function AllArtists({ artists }) {
   return (
     <StyledArtists
@@ -24,6 +26,7 @@ function AllArtists({ artists }) {
           </Link>
         </div>
       ))}
+      <ScrollTop />
     </StyledArtists>
   );
 }

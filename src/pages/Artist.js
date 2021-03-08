@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { pageAnim } from "../animations";
 
 import { useHistory } from "react-router-dom";
+
+import ScrollTop from "../components/ScrollTop";
 
 function Artist({ artists }) {
   // console.log(artists[0]);
@@ -14,7 +17,7 @@ function Artist({ artists }) {
   console.log(artists[0].id);
 
   return (
-    <StyledArtist>
+    <StyledArtist variants={pageAnim} initial="hide" animate="show" exit="exit">
       <h1>{selectedArtist[0].name}</h1>
       <img src={selectedArtist[0].profileImage} alt="" />
       <p>{selectedArtist[0].bio}</p>
@@ -22,6 +25,7 @@ function Artist({ artists }) {
       {selectedArtist[0].portfolio.map((url) => (
         <img src={url} alt="" />
       ))}
+      <ScrollTop />
     </StyledArtist>
   );
 }
